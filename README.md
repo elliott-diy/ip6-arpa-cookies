@@ -37,4 +37,3 @@ Since both fall under the same `2.ip6.arpa` parent, the browser treats them as p
 
 - Blog: [elliott.diy/blog/arpa](https://elliott.diy/blog/arpa) - if this 404s, I haven’t written it yet. Sorry, university is busy! :(
 - Public Suffix List: [publicsuffix.org](https://publicsuffix.org/)
-- GitHub: [elliott-diy](https://github.com/elliott-diy)  
