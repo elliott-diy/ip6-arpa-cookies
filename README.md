@@ -3,8 +3,10 @@
 This is a small demo showing how `ip6.arpa` reverse DNS zones interact in unexpected ways with the [Public Suffix List](https://publicsuffix.org/).
 
 Normally, browsers prevent cookies from being set at a top-level domain (e.g. `.com`) so they can’t be shared across unrelated sites.  
+
 But because of how `ip6.arpa` is handled, you can scope cookies to **`2.ip6.arpa`**, the only publicly routed IPv6 reverse zone.  
-As a result, cookies can be read across *any* site hosted under that zone — even if they’re unrelated.
+
+As a result, cookies can be read across *any* site hosted under that zone, even if they’re unrelated.
 
 ---
 
