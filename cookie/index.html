@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Supershy WebSocket RCE PoC</title>
-    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.7.2/dist/socket.io.min.js"></script>
+    <title>2.ip6.arpa Tomfoolery | Cookie</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>cookie.c.e.0.b.0.7.4.0.1.0.0.2.ip6.arpa</h1>
-<p class="subtext">Tested locally against the vulnerable version of Supershy.</p>
+<p class="subtext">A simple demo showing how gaps in the Public Suffix List allow globally accessible cookies on ip6.arpa domains.</p>
 
 <img src="https://cdn.dashnet.org/cookieclicker/img/perfectCookie.png" alt="Seal">
 
@@ -22,15 +21,22 @@
     function setCookie() {
         const v = crypto.randomUUID();
         document.cookie = `demo=${v}; Domain=2.ip6.arpa; Path=/; Secure; SameSite=Lax; Max-Age=600`;
-        document.getElementById("log").textContent = "Cookie set.";
-    }
+        document.getElementById('log').innerHTML = 'Setting cookie: ' + document.cookie;
+        document.getElementById("log").innerHTML += '\nCookie set! Go check out another ip6.arpa site to see if it can read the cookie <a href="https://monster.9.4.8.e.0.7.4.0.1.0.0.2.ip6.arpa" target="_blank">here</a>.';    }
 </script>
 
 <div class="footer">
-    This is a PoC for a vulnerability reported through responsible disclosure.<br>
-    It was fixed quickly by the Supershy dev. This page is here for demo and educational purposes.<br>
-    More info: <a href="https://elliott.diy/blog/supershy" target="_blank">elliott.diy</a> • <a href="https://github.com/elliott-diy" target="_blank">GitHub</a>
+    This demo highlights an oddity in how the Public Suffix List treats <code>ip6.arpa</code>.<br />
+    Since <code>2.ip6.arpa</code> is the only publicly routed reverse zone, cookies scoped here are effectively
+    global, something normally blocked on TLDs like <code>.com</code>.<br />
+    In practice this isn’t a security issue, since nobody sane runs normal websites directly on
+    <code>.ip6.arpa</code>.<br /><br />
+    More info: <a href="https://elliott.diy/blog/arpa" target="_blank">elliott.diy/blog/arpa</a> •
+    <a href="https://github.com/elliott-diy" target="_blank">GitHub</a> •
+    <a href="https://9.4.8.e.0.7.4.0.1.0.0.2.ip6.arpa/" target="_blank">lemonyte.com</a>
+    <br /><br />
 </div>
+
 
 
 </body>

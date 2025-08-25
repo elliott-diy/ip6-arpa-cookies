@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.ip6.arpa Tomfoolery | Monster</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-$END$
+<h1>monster.9.4.8.e.0.7.4.0.1.0.0.2.ip6.arpa</h1>
+<p class="subtext">
+  A simple demo showing how gaps in the Public Suffix List allow globally accessible cookies on
+  <code>ip6.arpa</code>
+  domains.
+</p>
+
+<img
+        src="https://media1.tenor.com/m/FEfdu-sg7ecAAAAd/sesame-street-cookie-monster-eats-your-art.gif"
+        alt="Cookie Monster"
+/>
+
+<div class="buttons">
+  <button onclick="readCookie()">Read Cookie</button>
+</div>
+
+<pre id="log">Waiting to read cookie...</pre>
+
+<script>
+  function readCookie() {
+    const cookies = document.cookie || "(no cookies visible to JS)";
+    document.getElementById("log").textContent = "Cookies:\n" + cookies;
+  }
+</script>
+
+<div class="footer">
+  This demo highlights an oddity in how the Public Suffix List treats <code>ip6.arpa</code>.<br />
+  Since <code>2.ip6.arpa</code> is the only publicly routed reverse zone, cookies scoped here are effectively
+  global, something normally blocked on TLDs like <code>.com</code>.<br />
+  In practice this isn’t a security issue, since nobody sane runs normal websites directly on
+  <code>.ip6.arpa</code>.<br /><br />
+  More info: <a href="https://elliott.diy/blog/arpa" target="_blank">elliott.diy</a> •
+  <a href="https://github.com/elliott-diy" target="_blank">GitHub</a> •
+  <a href="https://9.4.8.e.0.7.4.0.1.0.0.2.ip6.arpa/" target="_blank">lemonyte.com</a>
+  <br /><br />
+  Not sure what this is? Visit the <a href="https://cookie.c.e.0.b.0.7.4.0.1.0.0.2.ip6.arpa/">cookie</a> page
+  first to use the demo.
+</div>
 </body>
 </html>
