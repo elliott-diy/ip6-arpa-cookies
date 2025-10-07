@@ -4,7 +4,7 @@ This is a small demo showing how `ip6.arpa` reverse DNS zones interact in unexpe
 
 Normally, browsers prevent cookies from being set at a top-level domain (e.g. `.com`) so they can’t be shared across unrelated sites.  
 
-But because of how `ip6.arpa` is handled, you can scope cookies to **`2.ip6.arpa`**, the only publicly routed IPv6 reverse zone.  
+But because of how `ip6.arpa` is handled, you can scope cookies to `2.ip6.arpa`, the only publicly routed IPv6 reverse zone (oversimplified, but I wanted to keep this short).  
 
 As a result, cookies can be read across *any* site hosted under that zone, even if they’re unrelated.
 
@@ -21,10 +21,10 @@ Since both fall under the same `2.ip6.arpa` parent, the browser treats them as p
 
 ## Why this matters
 
-- **TL;DR:** It doesn’t, nobody sane hosts production websites on `ip6.arpa`.
+- **TL;DR:** It doesn’t; nobody sane hosts production websites on `ip6.arpa`.
 - It does, however, highlight a quirk in how cookie scoping and the Public Suffix List interact with unusual domains.
 - The same concept applies to `in-addr.arpa` for IPv4, though it’s much harder to demonstrate.
-- In theory, this could be misused for tracking or command-and-control if someone deliberately abused `.arpa` hosting. I won’t go into details here, but please don’t do that.
+- In theory, this could be misused for tracking or command-and-control if someone deliberately abused `.arpa` hosting. I won’t go into those fun details here, but please don’t do that.
 --- 
 
 ## Acknowledgements
