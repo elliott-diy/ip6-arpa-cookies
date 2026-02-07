@@ -4,7 +4,7 @@
 >  
 > This demo is no longer hosted due to recent CA/browser forum policy changes that prevent issuing SSL certificates for **`.arpa` domains**, making it impractical to run in modern browsers (and with Cloudflare).  
 >  
-> I *might* revisit this in the future — possibly using something like **`e164.arpa` numbers** instead 👀.  
+> I *might* revisit this in the future using something like **`e164.arpa` numbers** instead 👀.  
 
 This is a small demo showing how `ip6.arpa` reverse DNS zones interact in unexpected ways with the [Public Suffix List](https://publicsuffix.org/).
 
